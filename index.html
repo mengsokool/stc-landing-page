@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MyCollege - ระบบบริหารจัดการวิทยาลัย">
+    <title>MyCollege | ระบบบริหารจัดการวิทยาลัย</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --primary:       #2d6aa0;
+            --primary-dark:  #1e4f7c;
+            --primary-mid:   #3a7dbf;
+            --primary-light: #e8f2fb;
+            --text:          #1e293b;
+            --text-muted:    #64748b;
+            --border:        #dde6f0;
+            --bg:            #f2f6fb;
+            --white:         #ffffff;
+            --radius:        12px;
+            --shadow:        0 2px 12px rgba(45,106,160,.10);
+            --shadow-hover:  0 8px 28px rgba(45,106,160,.20);
+        }
+
+        body {
+            font-family: 'Noto Sans Thai', 'Sarabun', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ===== NAVBAR ===== */
+        .topbar {
+            background: var(--primary-dark);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,.18);
+        }
+        .topbar-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            height: 56px;
+            gap: 8px;
+        }
+        .topbar-brand {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            letter-spacing: .02em;
+            margin-right: auto;
+        }
+        .topbar-brand i { color: #93c5fd; font-size: 1.2rem; }
+        .topbar-nav {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            list-style: none;
+        }
+        .topbar-nav a {
+            color: rgba(255,255,255,.80);
+            text-decoration: none;
+            font-size: .82rem;
+            font-weight: 500;
+            padding: 6px 12px;
+            border-radius: 6px;
+            transition: background .18s, color .18s;
+            white-space: nowrap;
+        }
+        .topbar-nav a:hover { background: rgba(255,255,255,.12); color: #fff; }
+        @media (max-width: 700px) { .topbar-nav { display: none; } }
+
+        /* ===== HERO ===== */
+        .hero {
+            background:
+                linear-gradient(160deg, rgba(30,79,124,.92) 0%, rgba(45,106,160,.82) 60%, rgba(58,125,191,.70) 100%),
+                url('img/label2.jpg') center center / cover no-repeat;
+            color: #fff;
+            padding: 72px 20px 64px;
+            text-align: center;
+        }
+        .hero-logo {
+            width: 68px; height: 48px;
+            background: rgba(255,255,255,.15);
+            border: 2px solid rgba(255,255,255,.30);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 0px;
+            font-size: 2rem;
+            backdrop-filter: blur(4px);
+        }
+        .hero h1 {
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            font-weight: 700;
+            letter-spacing: .01em;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: clamp(.9rem, 2.5vw, 1.05rem);
+            opacity: .80;
+            max-width: 480px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* ===== CARDS SECTION ===== */
+        .section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 48px 20px 60px;
+            flex: 1;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--primary);
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            margin-bottom: 32px;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 40px; height: 3px;
+            background: var(--primary);
+            border-radius: 2px;
+            margin: 8px auto 0;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        @media (max-width: 800px) { .cards-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 500px) { .cards-grid { grid-template-columns: 1fr; } }
+
+        .sys-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 28px 24px 24px;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            border-top: 3px solid transparent;
+            transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .sys-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--primary-light);
+            opacity: 0;
+            transition: opacity .22s;
+        }
+        .sys-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-hover);
+            border-top-color: var(--primary);
+        }
+        .sys-card:hover::before { opacity: 1; }
+
+        .card-icon {
+            position: relative;
+            width: 64px; height: 64px;
+            background: var(--primary-light);
+            color: var(--primary);
+            border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.7rem;
+            margin-bottom: 16px;
+            transition: background .22s, color .22s;
+            z-index: 1;
+        }
+        .sys-card:hover .card-icon {
+            background: var(--primary);
+            color: #fff;
+        }
+        .card-title {
+            position: relative;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            z-index: 1;
+        }
+        .card-desc {
+            position: relative;
+            font-size: .84rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 18px;
+            z-index: 1;
+        }
+        .card-link {
+            position: relative;
+            font-size: .82rem;
+            font-weight: 600;
+            color: var(--primary);
+            display: flex; align-items: center; gap: 5px;
+            margin-top: auto;
+            z-index: 1;
+            transition: gap .18s;
+        }
+        .sys-card:hover .card-link { gap: 8px; }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--primary-dark);
+            color: rgba(255,255,255,.55);
+            text-align: center;
+            padding: 18px 20px;
+            font-size: .82rem;
+        }
+        footer span { color: rgba(255,255,255,.80); font-weight: 600; }
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="topbar">
+    <div class="topbar-inner">
+        <a href="#" class="topbar-brand">
+            <i class="fa-solid fa-graduation-cap"></i> MyCollege
+        </a>
+        <div class="topbar-nav">
+            <a href="mycollege-new/"><i class="fa-solid fa-building-columns"></i> MyCollege</a>
+            <a href="attendence/login/"><i class="fa-solid fa-clock"></i> ลงเวลา</a>
+            <a href="datetime_new/index.php"><i class="fa-solid fa-calendar-check"></i> กิจกรรม</a>
+            <a href="login-formX/"><i class="fa-solid fa-briefcase"></i> ทวิภาคีฯ</a>
+            <a href="admidonline/"><i class="fa-solid fa-user-plus"></i> สมัครเรียน</a>
+            <a href="rule/"><i class="fa-solid fa-shield-halved"></i> ปกครอง</a>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+    <div class="hero-logo"><i class="fa-solid fa-graduation-cap"></i></div>
+    <h2>ระบบบริหารจัดการวิทยาลัย</h2>
+    <p>MyCollege — Smart Management System for Modern Vocational Education</p>
+</header>
+
+<!-- CARDS -->
+<main class="section">
+    <div class="section-title">เลือกระบบที่ต้องการใช้งาน</div>
+    <div class="cards-grid">
+
+        <a href="mycollege-new/" class="sys-card">
+            <div class="card-icon"><i class="fa-solid fa-building-columns"></i></div>
+            <div class="card-title">ระบบงาน MyCollege</div>
+            <div class="card-desc">จัดการข้อมูลนักเรียน บุคลากร การเรียนการสอน และงานทะเบียนสำหรับครู</div>
+            <div class="card-link">เข้าสู่ระบบ <i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <a href="datetime_new/index.php" class="sys-card">
+            <div class="card-icon"><i class="fa-solid fa-calendar-check"></i></div>
+            <div class="card-title">จัดการกิจกรรม Online</div>
+            <div class="card-desc">ระบบเช็คชื่อและจัดการการเข้าร่วมกิจกรรมของนักเรียนนักศึกษา</div>
+            <div class="card-link">เข้าสู่ระบบ <i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <a href="login-formX/index.php?action=0&alert=0" class="sys-card">
+            <div class="card-icon"><i class="fa-solid fa-briefcase"></i></div>
+            <div class="card-title">งานทวิภาคีฯ</div>
+            <div class="card-desc">ระบบจัดการฝึกงานและฝึกประสบการณ์วิชาชีพในสถานประกอบการ</div>
+            <div class="card-link">เข้าสู่ระบบ <i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <a href="admidonline/" class="sys-card">
+            <div class="card-icon"><i class="fa-solid fa-user-plus"></i></div>
+            <div class="card-title">รับสมัครออนไลน์</div>
+            <div class="card-desc">ระบบรับสมัครนักเรียนนักศึกษาใหม่ผ่านระบบออนไลน์ตลอด 24 ชม.</div>
+            <div class="card-link">เข้าสู่ระบบ <i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <a href="attendence/login/index.php" class="sys-card">
+            <div class="card-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="card-title">ลงเวลาปฏิบัติงาน</div>
+            <div class="card-desc">ลงเวลาปฏิบัติงานสำหรับบุคลากรด้วยระบบ Border GPS Tracking</div>
+            <div class="card-link">เข้าสู่ระบบ <i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <a href="rule/index.php" class="sys-card">
+            <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="card-title">งานปกครอง</div>
+            <div class="card-desc">ระบบจัดการคะแนนความประพฤติและวินัยนักเรียนนักศึกษา</div>
+            <div class="card-link">เข้าสู่ระบบ <i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+    </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+    &copy; 2026 <span>MyCollege</span> &nbsp;·&nbsp; Modern Vocational Education Management System
+</footer>
+
+</body>
+</html>

@@ -7,128 +7,153 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-    --background: oklch(1 0 0);
-    --foreground: oklch(0.145 0 0);
-    --card: oklch(1 0 0);
-    --card-foreground: oklch(0.145 0 0);
-    --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.145 0 0);
-    --primary: oklch(0.505 0.213 27.518);
-    --primary-foreground: oklch(0.971 0.013 17.38);
-    --secondary: oklch(0.967 0.001 286.375);
-    --secondary-foreground: oklch(0.21 0.006 285.885);
-    --muted: oklch(0.97 0 0);
-    --muted-foreground: oklch(0.556 0 0);
-    --accent: oklch(0.97 0 0);
-    --accent-foreground: oklch(0.205 0 0);
-    --destructive: oklch(0.577 0.245 27.325);
-    --border: oklch(0.922 0 0);
-    --input: oklch(0.922 0 0);
-    --ring: oklch(0.708 0 0);
-    --chart-1: oklch(0.808 0.114 19.571);
-    --chart-2: oklch(0.637 0.237 25.331);
-    --chart-3: oklch(0.577 0.245 27.325);
-    --chart-4: oklch(0.505 0.213 27.518);
-    --chart-5: oklch(0.444 0.177 26.899);
-    --radius: 0;
-    --sidebar: oklch(0.985 0 0);
-    --sidebar-foreground: oklch(0.145 0 0);
-    --sidebar-primary: oklch(0.577 0.245 27.325);
-    --sidebar-primary-foreground: oklch(0.971 0.013 17.38);
-    --sidebar-accent: oklch(0.97 0 0);
-    --sidebar-accent-foreground: oklch(0.205 0 0);
-    --sidebar-border: oklch(0.922 0 0);
-    --sidebar-ring: oklch(0.708 0 0);
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.505 0.213 27.518);
+  --primary-foreground: oklch(0.971 0.013 17.38);
+  --secondary: oklch(0.967 0.001 286.375);
+  --secondary-foreground: oklch(0.21 0.006 285.885);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.808 0.114 19.571);
+  --chart-2: oklch(0.637 0.237 25.331);
+  --chart-3: oklch(0.577 0.245 27.325);
+  --chart-4: oklch(0.505 0.213 27.518);
+  --chart-5: oklch(0.444 0.177 26.899);
+  --radius: 0;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.577 0.245 27.325);
+  --sidebar-primary-foreground: oklch(0.971 0.013 17.38);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
 }
 
 .dark {
-    --background: oklch(0.145 0 0);
-    --foreground: oklch(0.985 0 0);
-    --card: oklch(0.205 0 0);
-    --card-foreground: oklch(0.985 0 0);
-    --popover: oklch(0.205 0 0);
-    --popover-foreground: oklch(0.985 0 0);
-    --primary: oklch(0.444 0.177 26.899);
-    --primary-foreground: oklch(0.971 0.013 17.38);
-    --secondary: oklch(0.274 0.006 286.033);
-    --secondary-foreground: oklch(0.985 0 0);
-    --muted: oklch(0.269 0 0);
-    --muted-foreground: oklch(0.708 0 0);
-    --accent: oklch(0.269 0 0);
-    --accent-foreground: oklch(0.985 0 0);
-    --destructive: oklch(0.704 0.191 22.216);
-    --border: oklch(1 0 0 / 10%);
-    --input: oklch(1 0 0 / 15%);
-    --ring: oklch(0.556 0 0);
-    --chart-1: oklch(0.808 0.114 19.571);
-    --chart-2: oklch(0.637 0.237 25.331);
-    --chart-3: oklch(0.577 0.245 27.325);
-    --chart-4: oklch(0.505 0.213 27.518);
-    --chart-5: oklch(0.444 0.177 26.899);
-    --sidebar: oklch(0.205 0 0);
-    --sidebar-foreground: oklch(0.985 0 0);
-    --sidebar-primary: oklch(0.637 0.237 25.331);
-    --sidebar-primary-foreground: oklch(0.971 0.013 17.38);
-    --sidebar-accent: oklch(0.269 0 0);
-    --sidebar-accent-foreground: oklch(0.985 0 0);
-    --sidebar-border: oklch(1 0 0 / 10%);
-    --sidebar-ring: oklch(0.556 0 0);
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.444 0.177 26.899);
+  --primary-foreground: oklch(0.971 0.013 17.38);
+  --secondary: oklch(0.274 0.006 286.033);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.808 0.114 19.571);
+  --chart-2: oklch(0.637 0.237 25.331);
+  --chart-3: oklch(0.577 0.245 27.325);
+  --chart-4: oklch(0.505 0.213 27.518);
+  --chart-5: oklch(0.444 0.177 26.899);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.637 0.237 25.331);
+  --sidebar-primary-foreground: oklch(0.971 0.013 17.38);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
 }
 
 @theme inline {
-    --font-sans: 'Instrument Sans Variable', sans-serif;
-    --font-heading: 'IBM Plex Sans Variable', sans-serif;
-    --color-sidebar-ring: var(--sidebar-ring);
-    --color-sidebar-border: var(--sidebar-border);
-    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-    --color-sidebar-accent: var(--sidebar-accent);
-    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-    --color-sidebar-primary: var(--sidebar-primary);
-    --color-sidebar-foreground: var(--sidebar-foreground);
-    --color-sidebar: var(--sidebar);
-    --color-chart-5: var(--chart-5);
-    --color-chart-4: var(--chart-4);
-    --color-chart-3: var(--chart-3);
-    --color-chart-2: var(--chart-2);
-    --color-chart-1: var(--chart-1);
-    --color-ring: var(--ring);
-    --color-input: var(--input);
-    --color-border: var(--border);
-    --color-destructive: var(--destructive);
-    --color-accent-foreground: var(--accent-foreground);
-    --color-accent: var(--accent);
-    --color-muted-foreground: var(--muted-foreground);
-    --color-muted: var(--muted);
-    --color-secondary-foreground: var(--secondary-foreground);
-    --color-secondary: var(--secondary);
-    --color-primary-foreground: var(--primary-foreground);
-    --color-primary: var(--primary);
-    --color-popover-foreground: var(--popover-foreground);
-    --color-popover: var(--popover);
-    --color-card-foreground: var(--card-foreground);
-    --color-card: var(--card);
-    --color-foreground: var(--foreground);
-    --color-background: var(--background);
-    --radius-sm: calc(var(--radius) * 0.6);
-    --radius-md: calc(var(--radius) * 0.8);
-    --radius-lg: var(--radius);
-    --radius-xl: calc(var(--radius) * 1.4);
-    --radius-2xl: calc(var(--radius) * 1.8);
-    --radius-3xl: calc(var(--radius) * 2.2);
-    --radius-4xl: calc(var(--radius) * 2.6);
+  --font-sans: "IBM Plex Sans Thai", sans-serif;
+  --font-heading: "IBM Plex Sans Thai", sans-serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
-    }
+  }
   body {
     @apply bg-background text-foreground;
-    }
-  button:not(:disabled), [role="button"]:not(:disabled) {
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
     cursor: pointer;
-    }
+  }
   html {
     @apply font-sans;
-    }
+  }
+}
+
+.magicpattern {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: repeat;
+  background-image: url("data:image/svg+xml;utf8,%3Csvg width=%222000%22 height=%221400%22 xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3ClinearGradient id=%22a%22 gradientTransform=%22rotate(90)%22%3E%3Cstop offset=%225%25%22 stop-color=%22%23bb2d2b%22%2F%3E%3Cstop offset=%2295%25%22 stop-color=%22%23cc6160%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient id=%22b%22 gradientTransform=%22rotate(90)%22%3E%3Cstop offset=%225%25%22 stop-color=%22%23c23330%22%2F%3E%3Cstop offset=%2295%25%22 stop-color=%22%23d16663%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient id=%22c%22 gradientTransform=%22rotate(90)%22%3E%3Cstop offset=%225%25%22 stop-color=%22%23ca3834%22%2F%3E%3Cstop offset=%2295%25%22 stop-color=%22%23d76966%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient id=%22d%22 gradientTransform=%22rotate(90)%22%3E%3Cstop offset=%225%25%22 stop-color=%22%23d13e39%22%2F%3E%3Cstop offset=%2295%25%22 stop-color=%22%23dc6e6a%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient id=%22e%22 gradientTransform=%22rotate(90)%22%3E%3Cstop offset=%225%25%22 stop-color=%22%23d9443d%22%2F%3E%3Cstop offset=%2295%25%22 stop-color=%22%23e2726d%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient id=%22f%22 gradientTransform=%22rotate(90)%22%3E%3Cstop offset=%225%25%22 stop-color=%22%23d9423b%22%2F%3E%3Cstop offset=%2295%25%22 stop-color=%22%23e2716c%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient id=%22g%22 gradientTransform=%22rotate(90)%22%3E%3Cstop offset=%225%25%22 stop-color=%22%23d84139%22%2F%3E%3Cstop offset=%2295%25%22 stop-color=%22%23e1706a%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient id=%22h%22 gradientTransform=%22rotate(90)%22%3E%3Cstop offset=%225%25%22 stop-color=%22%23d83f38%22%2F%3E%3Cstop offset=%2295%25%22 stop-color=%22%23e16f69%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient id=%22i%22 gradientTransform=%22rotate(90)%22%3E%3Cstop offset=%225%25%22 stop-color=%22%23d73e36%22%2F%3E%3Cstop offset=%2295%25%22 stop-color=%22%23e16e68%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient id=%22j%22 gradientTransform=%22rotate(90)%22%3E%3Cstop offset=%225%25%22 stop-color=%22%23d73c34%22%2F%3E%3Cstop offset=%2295%25%22 stop-color=%22%23e16c66%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Cpath fill=%22%23b32727%22 d=%22M0 0h2000v1400H0z%22%2F%3E%3Cpath d=%22M0 127c38.936-3.336 77.872-6.672 114-10 36.128-3.328 69.45-6.648 107 0s79.331 23.263 118 26c38.669 2.737 74.226-8.404 108-11s65.767 3.353 103 5c37.233 1.647 79.708-1.01 119-7s75.401-15.315 113-14c37.599 1.315 76.686 13.269 112 20 35.314 6.731 66.854 8.24 103 5s76.898-11.228 113-14c36.102-2.772 67.553-.327 106-2s83.889-7.464 123-3c39.111 4.464 71.891 19.182 108 19 36.109-.182 75.546-15.263 113-20 37.454-4.737 72.926.869 110 6s75.752 9.788 109 10c33.248.212 61.067-4.02 103-7 41.933-2.98 97.98-4.709 120-5 22.02-.291 10.01.854 38 2l-40 1273H0Z%22 fill=%22url(%23a)%22%2F%3E%3Cpath d=%22M0 254c36.484 5.407 72.967 10.814 109 15s71.615 7.15 109 0c37.385-7.15 76.572-24.413 115-30s76.097.502 112 6c35.903 5.498 70.04 10.406 105 11 34.96.594 70.742-3.127 111-1 40.258 2.127 84.992 10.1 122 9 37.008-1.1 66.29-11.273 103-16 36.71-4.727 80.85-4.008 120-1 39.15 3.008 73.31 8.306 109 10 35.69 1.694 72.913-.216 108 0s68.039 2.558 106 1c37.961-1.558 80.933-7.016 119-12 38.067-4.984 71.23-9.495 108-3 36.77 6.495 77.145 23.997 115 25 37.855 1.003 73.188-14.494 107-16 33.812-1.506 66.103 10.98 107 16 40.897 5.02 90.4 2.577 111-1 20.6-3.577 12.3-8.289 44-13l-40 1146H0Z%22 fill=%22url(%23b)%22%2F%3E%3Cpath d=%22M0 381c38.591-.795 77.182-1.59 114-3s71.863-3.434 109-6 76.367-5.674 114-6c37.633-.326 73.668 2.131 110 9 36.332 6.869 72.961 18.15 109 20 36.039 1.85 71.486-5.73 108-9 36.514-3.27 74.093-2.233 112-5s76.141-9.338 111-8c34.859 1.338 66.341 10.586 106 15 39.659 4.414 87.493 3.993 124 1 36.507-2.993 61.686-8.558 98-10 36.314-1.442 83.764 1.238 123 6 39.236 4.762 70.256 11.606 104 8s70.21-17.66 110-19c39.79-1.34 82.905 10.036 120 10 37.095-.036 68.17-11.484 104-17s76.416-5.1 118 0 84.167 14.886 102 18c17.833 3.114 10.917-.443 44-4l-40 1019H0Z%22 fill=%22url(%23c)%22%2F%3E%3Cpath d=%22M0 509c34.566 4.371 69.133 8.742 105 9 35.867.258 73.035-3.597 110-6s73.728-3.354 114 0c40.272 3.354 84.052 11.012 121 8 36.948-3.012 67.062-16.694 101-21 33.938-4.306 71.7.766 111 6s80.14 10.631 118 13c37.86 2.369 72.742 1.71 110 1 37.258-.71 76.893-1.468 113 0s68.685 5.163 105 4c36.315-1.163 76.367-7.185 115-10 38.633-2.815 75.848-2.424 113-4s74.24-5.12 111-2c36.76 3.12 73.193 12.9 111 12 37.807-.9 76.987-12.485 113-11 36.013 1.485 68.86 16.037 103 16 34.14-.037 69.576-14.664 114-17 44.424-2.336 97.835 7.618 118 10 20.165 2.382 7.082-2.81 34-8l-40 891H0Z%22 fill=%22url(%23d)%22%2F%3E%3Cpath d=%22M0 636c36.972-.123 73.944-.246 112-4s77.195-11.139 112-12c34.805-.861 65.276 4.8 103 7 37.724 2.2 82.7.937 123 2s75.923 4.453 110 8c34.077 3.547 66.609 7.25 103 10 36.391 2.75 76.641 4.543 116-2 39.359-6.543 77.826-21.424 113-25 35.174-3.576 67.055 4.155 104 5 36.945.845 78.952-5.194 119-3s78.135 12.62 113 16c34.865 3.38 66.508-.288 103-3 36.492-2.712 77.833-4.468 114-8s67.162-8.84 104-5c36.838 3.84 79.52 16.83 117 19 37.48 2.17 69.757-6.48 105-10 35.243-3.52 73.45-1.91 116 3s89.443 13.117 109 14c19.557.883 11.779-5.558 44-12l-40 764H0Z%22 fill=%22url(%23e)%22%2F%3E%3Cpath d=%22M0 763c40.071-1.678 80.143-3.355 115-5s64.5-3.257 102-3c37.5.257 82.854 2.384 122 4s72.084 2.722 107 2 71.81-3.273 108-2c36.19 1.273 71.674 6.37 109 5 37.326-1.37 76.495-9.21 113-8 36.505 1.21 70.346 11.47 107 13 36.654 1.53 76.12-5.673 114-8 37.88-2.327 74.173.22 110 0s71.188-3.207 110 2 81.074 18.61 118 15c36.926-3.61 68.515-24.23 104-28 35.485-3.77 74.866 9.31 113 17 38.134 7.69 75.02 9.989 113 4 37.98-5.989 77.057-20.265 112-20 34.943.265 65.754 15.071 106 16 40.246.929 89.927-12.02 111-15 21.073-2.98 13.536 4.01 46 11l-40 637H0Z%22 fill=%22url(%23f)%22%2F%3E%3Cpath d=%22M0 890c34.17 1.045 68.339 2.09 104-2s72.815-13.316 111-10c38.185 3.316 77.401 19.172 115 26 37.599 6.828 73.58 4.628 109-3s70.277-20.684 110-24c39.723-3.316 84.313 3.108 124 9 39.687 5.892 74.471 11.252 109 8 34.529-3.252 68.802-15.117 105-14 36.198 1.117 74.32 15.215 112 16 37.68.785 74.92-11.742 113-13 38.08-1.258 77.002 8.754 114 11 36.998 2.246 72.074-3.274 107-9s69.704-11.657 107-8c37.296 3.657 77.111 16.9 114 16 36.889-.9 70.851-15.946 108-18 37.149-2.054 77.483 8.882 116 9 38.517.118 75.216-10.584 116-7 40.784 3.584 85.653 21.452 104 26 18.347 4.548 10.174-4.226 42-13l-40 510H0Z%22 fill=%22url(%23g)%22%2F%3E%3Cpath d=%22M0 1018c39.92 3.394 79.84 6.787 116 6 36.16-.787 68.558-5.756 106-4 37.442 1.756 79.929 10.235 116 9 36.071-1.235 65.727-12.185 100-13 34.273-.815 73.164 8.504 111 8 37.836-.504 74.617-10.832 114-11 39.383-.168 81.37 9.823 119 14 37.63 4.177 70.905 2.541 108 1s78.012-2.988 114-8c35.988-5.012 67.049-13.59 102-16 34.951-2.41 73.794 1.344 113 5 39.206 3.656 78.776 7.211 114 8 35.224.789 66.1-1.19 104-3 37.9-1.81 82.822-3.455 123-2s75.611 6.009 111 5c35.389-1.009 70.733-7.58 106-6 35.267 1.58 70.456 11.31 112 14 41.544 2.69 89.441-1.66 109-4 19.559-2.34 10.78-2.67 42-3l-40 382H0Z%22 fill=%22url(%23h)%22%2F%3E%3Cpath d=%22M0 1145c36.165-4.49 72.33-8.98 111-5 38.67 3.98 79.843 16.429 115 19 35.157 2.571 64.298-4.735 101-5 36.702-.265 80.964 6.51 119 2s69.845-20.308 105-22c35.155-1.692 73.655 10.72 110 14 36.345 3.28 70.536-2.574 110-5s84.203-1.423 124-2 74.652-2.734 108 0 65.188 10.358 103 13c37.812 2.642 81.596.302 119-3 37.404-3.302 68.427-7.567 106-5 37.573 2.567 81.697 11.967 119 9 37.303-2.967 67.785-18.299 104-21 36.215-2.701 78.163 7.23 115 10 36.837 2.77 68.565-1.618 102 1 33.435 2.618 68.579 12.243 112 12 43.421-.243 95.12-10.355 116-14 20.88-3.645 10.94-.822 41 2l-40 255H0Z%22 fill=%22url(%23i)%22%2F%3E%3Cpath d=%22M0 1272c36.22 6.247 72.44 12.494 109 16 36.56 3.506 73.46 4.27 112 0 38.54-4.27 78.719-13.577 114-16 35.281-2.423 65.664 2.04 103 0s81.625-10.579 120-13c38.375-2.421 70.834 1.277 105 2 34.166.723 70.038-1.528 108-2s78.015.834 116 0 73.904-3.808 113 1c39.096 4.808 81.37 17.397 117 22 35.63 4.603 64.615 1.22 99-5 34.385-6.22 74.169-15.28 113-19 38.831-3.72 76.71-2.1 114 2 37.29 4.1 73.99 10.683 110 14 36.01 3.317 71.332 3.37 109-2 37.668-5.37 77.684-16.16 113-12s65.931 23.274 108 27c42.069 3.726 95.591-7.935 117-13 21.409-5.065 10.704-3.532 40-2l-40 128H0Z%22 fill=%22url(%23j)%22%2F%3E%3C%2Fsvg%3E");
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@utility animate-fade-in-up {
+  animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
 }

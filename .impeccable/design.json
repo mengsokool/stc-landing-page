@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-05-08T15:53:00Z",
+  "title": "Design System: Surin Technical College Portal",
+  "extensions": {
+    "colorMeta": {
+      "primary": { "role": "primary", "displayName": "Energetic Crimson", "canonical": "#ef4444", "tonalRamp": ["#7f1d1d", "#991b1b", "#b91c1c", "#dc2626", "#ef4444", "#f87171", "#fca5a5", "#fecaca"] },
+      "neutral-bg": { "role": "neutral", "displayName": "Clean Official Paper", "canonical": "#f9fafb", "tonalRamp": ["#111827", "#1f2937", "#374151", "#4b5563", "#6b7280", "#9ca3af", "#d1d5db", "#f3f4f6"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Page titles. Used in the main header to establish the portal's identity." }
+    },
+    "shadows": [
+      { "name": "shadow-sm", "value": "0 1px 2px 0 rgba(0, 0, 0, 0.05)", "purpose": "Resting shadow for cards." },
+      { "name": "shadow-md", "value": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)", "purpose": "Hover lift for cards." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Menu Card",
+      "kind": "card",
+      "refersTo": "card-menu",
+      "description": "Tactile and responsive menu card for navigation.",
+      "html": "<a href=\"#\" class=\"ds-menu-card\"><div class=\"ds-icon-wrapper\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"32\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M22 9l-10 -4l-10 4l10 4l10 -4v6\"></path><path d=\"M6 10.6v5.4a6 3 0 0 0 12 0v-5.4\"></path></svg></div><span>บริการนักเรียน</span></a>",
+      "css": ".ds-menu-card { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; border-radius: 16px; border: 1px solid #f3f4f6; background-color: #ffffff; padding: 32px; text-align: center; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); transition: all 0.3s ease; text-decoration: none; font-family: system-ui, sans-serif; color: #1f2937; font-weight: 700; } .ds-menu-card:hover { background-color: #fef2f2; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); color: #dc2626; } .ds-icon-wrapper { background-color: #fee2e2; color: #dc2626; padding: 16px; border-radius: 16px; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; } .ds-menu-card:hover .ds-icon-wrapper { background-color: #ef4444; color: #ffffff; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Vibrant Official Hub",
+    "overview": "The design philosophy for the Surin Technical College portal is centered around being a vibrant yet highly credible touchpoint. It uses soft layering and a bright, energetic crimson to bring life to an official academic structure. The interface is highly structured and clearly navigable, completely rejecting the cluttered density and tiny text often associated with old government systems. It should never feel like an uninspired, generic AI template, but rather a purposeful, modern, and confident digital service center.",
+    "keyCharacteristics": [
+      "Clear and Confident: Interfaces emphasize readability and distinct touch targets.",
+      "Vibrant Yet Official: Saturated red tones balanced by generous clean, white/gray paper space.",
+      "Soft Layering: Depth is conveyed through subtle, soft shadows rather than hard lines or flat surfaces."
+    ],
+    "rules": [
+      { "name": "The Vibrant Accent Rule", "body": "Red is used purposefully to draw the eye to interactive elements and icons. It should not be used as a large solid background except for the primary Hero/Header section.", "section": "colors" },
+      { "name": "The No-Clutter Rule", "body": "Text should be restricted to essential labels only. No secondary descriptive paragraphs inside quick menu cards.", "section": "typography" },
+      { "name": "The Tactile Feedback Rule", "body": "Every clickable card must respond to hover with both a shadow lift and a subtle background color shift.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do use rounded-2xl (16px) for cards to maintain the modern, approachable feel.",
+      "Do apply Soft Layering to all clickable cards to ensure they feel tactile and responsive.",
+      "Do highlight the \"Admission\" action so it stands out unmistakably from routine administrative tasks.",
+      "Do stick to the specific spacing scale (2, 4, 8, 16, 24, 32)."
+    ],
+    "donts": [
+      "Don't create old, cluttered government layouts with tiny text and disorganized grids.",
+      "Don't use overly futuristic, complex interfaces (like excessive glassmorphism or neon colors) that hinder usability.",
+      "Don't generate \"AI Slop\" (generic, soulless templates, obvious AI clichés, or repetitive card grids lacking deliberate design choices).",
+      "Don't use a spacing value of 6 (gap-6, p-6, etc.). This is explicitly forbidden in this design system."
+    ]
+  }
+}
