@@ -1,6 +1,5 @@
 ---
 import Layout from "@/layouts/main.astro"
-import { FlickeringGrid } from "@/components/ui/flickering-grid"
 import { cn } from "@/lib/utils"
 import { portalConfig } from "@/portal.config"
 import {
@@ -124,9 +123,7 @@ const utilityLinks: ServiceLink[] = [
           >
             {portalConfig.productName}
           </h1>
-          <p
-            class="mt-4 hidden max-w-xl text-lg leading-8 text-primary-foreground text-white md:block"
-          >
+          <p class="mt-4 hidden max-w-xl text-lg leading-8 text-white md:block">
             {portalConfig.description}
           </p>
         </div>
@@ -159,7 +156,7 @@ const utilityLinks: ServiceLink[] = [
                 style={`animation-delay: ${250 + index * 100}ms;`}
               >
                 <div class="flex justify-between gap-4">
-                  <div class="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                  <div class="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-blue-100 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground dark:bg-blue-900/50">
                     {link.image ? (
                       <img
                         src={link.image}
@@ -207,15 +204,15 @@ const utilityLinks: ServiceLink[] = [
                   class={cn(
                     "group relative flex animate-fade-in-up items-center gap-4 overflow-hidden rounded-lg p-4 transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring",
                     link.highlight
-                      ? "border border-red-500/30 bg-red-500/5 shadow-[0_0_12px_-2px_rgba(239,68,68,0.25)] hover:border-red-500/60 hover:bg-red-500/10 hover:shadow-[0_0_12px_0px_rgba(239,68,68,0.4)]"
+                      ? "border border-red-200 bg-red-50 shadow-[0_0_12px_-2px_rgba(239,68,68,0.25)] hover:border-red-300 hover:bg-red-100 hover:shadow-[0_0_12px_0px_rgba(239,68,68,0.4)] dark:border-red-900 dark:bg-red-950"
                       : "border bg-muted/40 hover:border-border hover:bg-card hover:shadow-sm"
                   )}
                   style={`animation-delay: ${550 + index * 100}ms;`}
                 >
                   {link.highlight && (
-                    <div class="pointer-events-none absolute -top-4 -right-4 z-0 h-16 w-16 animate-pulse rounded-full bg-red-500/30 blur-2xl transition-all duration-700 group-hover:bg-red-400/40 group-hover:blur-3xl" />
+                    <div class="pointer-events-none absolute -top-4 -right-4 z-0 h-16 w-16 animate-pulse rounded-full bg-red-200 blur-2xl transition-all duration-700 group-hover:bg-red-300 group-hover:blur-3xl dark:bg-red-900" />
                   )}
-                  <div class="relative z-10 flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-md bg-muted text-muted-foreground transition-colors group-hover:bg-primary/10 group-hover:text-primary">
+                  <div class="relative z-10 flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-md bg-muted text-muted-foreground transition-colors group-hover:bg-blue-100 group-hover:text-primary dark:group-hover:bg-blue-900/50">
                     {link.image ? (
                       <img
                         src={link.image}
@@ -261,7 +258,7 @@ const utilityLinks: ServiceLink[] = [
                   class="group flex animate-fade-in-up items-center gap-4 rounded-lg border bg-muted/40 p-4 transition-all hover:border-border hover:bg-card hover:shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
                   style={`animation-delay: ${850 + index * 100}ms;`}
                 >
-                  <div class="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-md bg-muted text-muted-foreground transition-colors group-hover:bg-primary/10 group-hover:text-primary">
+                  <div class="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-md bg-muted text-muted-foreground transition-colors group-hover:bg-blue-100 group-hover:text-primary dark:group-hover:bg-blue-900/50">
                     {link.image ? (
                       <img
                         src={link.image}
