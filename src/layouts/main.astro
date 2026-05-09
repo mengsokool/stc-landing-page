@@ -1,19 +1,24 @@
 ---
-import '@fontsource/ibm-plex-sans-thai/300.css';
-import '@fontsource/ibm-plex-sans-thai/400.css';
-import '@fontsource/ibm-plex-sans-thai/500.css';
-import '@fontsource/ibm-plex-sans-thai/600.css';
-import '@fontsource/ibm-plex-sans-thai/700.css';
+import "@fontsource/ibm-plex-sans-thai/300.css"
+import "@fontsource/ibm-plex-sans-thai/400.css"
+import "@fontsource/ibm-plex-sans-thai/500.css"
+import "@fontsource/ibm-plex-sans-thai/600.css"
+import "@fontsource/ibm-plex-sans-thai/700.css"
 import "@/styles/global.css"
+import { portalConfig } from "@/portal.config"
+
+const pageTitle = portalConfig.institutionShortName
+  ? `${portalConfig.institutionShortName} | ${portalConfig.productName}`
+  : `${portalConfig.productName} | ระบบบริการสถานศึกษา`
 ---
 
 <html lang="th">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="วิทยาลัยเทคนิคสุรินทร์ (Surin Technical College) - ระบบบริการสถานศึกษาออนไลน์ รวมบริการสำหรับนักเรียน ครู และบุคลากร" />
+    <meta name="description" content={portalConfig.description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>วิทยาลัยเทคนิคสุรินทร์ | ระบบบริการสถานศึกษา</title>
+    <title>{pageTitle}</title>
   </head>
   <body>
     <slot />

@@ -1,259 +1,245 @@
 ---
 import Layout from "@/layouts/main.astro"
+import { FlickeringGrid } from "@/components/ui/flickering-grid"
+import { cn } from "@/lib/utils"
+import { portalConfig } from "@/portal.config"
 import {
-  IconSchool,
   IconBriefcase,
+  IconBuilding,
   IconBuildingFactory,
-  IconShieldCheck,
   IconCalendarEvent,
   IconClockCheck,
-  IconBuilding,
-  IconUserPlus,
-  IconQrcode,
+  IconExternalLink,
   IconPrinter,
-  IconChevronRight,
+  IconQrcode,
+  IconSchool,
+  IconShieldCheck,
+  IconUserPlus,
 } from "@tabler/icons-react"
 
-import { FlickeringGrid } from "@/components/ui/flickering-grid"
-
-interface LinkType {
+interface ServiceLink {
   name: string
   url: string
   icon: any
 }
 
-const mainLinks: LinkType[] = [
+const mainLinks: ServiceLink[] = [
   {
     name: "บริการนักเรียน",
-    url: "https://surintechdigital.net/login-formX/index.php?action=0&alert=0",
+    url: portalConfig.endpoints.student,
     icon: IconSchool,
   },
-  { name: "บริการครู", url: "https://surintechdigital.net/mycollege-new/", icon: IconBriefcase },
+  {
+    name: "บริการครู",
+    url: portalConfig.endpoints.teacher,
+    icon: IconBriefcase,
+  },
   {
     name: "บริการสถานประกอบการ",
-    url: "https://surintechdigital.net/login-formX/index.php?action=0&alert=0",
+    url: portalConfig.endpoints.workplace,
     icon: IconBuildingFactory,
   },
 ]
 
-const staffLinks: LinkType[] = [
-  { name: "งานปกครอง", url: "https://surintechdigital.net/rule/index.php", icon: IconShieldCheck },
+const featuredLinks: ServiceLink[] = [
+  {
+    name: "สมัครเรียน",
+    url: portalConfig.endpoints.admission,
+    icon: IconUserPlus,
+  },
+  ...mainLinks,
+]
+
+const staffLinks: ServiceLink[] = [
+  {
+    name: "งานปกครอง",
+    url: portalConfig.endpoints.discipline,
+    icon: IconShieldCheck,
+  },
   {
     name: "งานกิจกรรม",
-    url: "https://surintechdigital.net/datetime_new/index.php",
+    url: portalConfig.endpoints.activity,
     icon: IconCalendarEvent,
   },
   {
     name: "ลงเวลาปฏิบัติงาน",
-    url: "https://surintechdigital.net/attendence/login/index.php",
+    url: portalConfig.endpoints.attendance,
     icon: IconClockCheck,
   },
   {
     name: "ขออนุญาตใช้อาคาร",
-    url: "/application-form-facility",
+    url: portalConfig.endpoints.facility,
     icon: IconBuilding,
   },
 ]
 
-const utilityLinks: LinkType[] = [
-  { name: "ขอ QR Code เช็คชื่อ", url: "/login-guidance", icon: IconQrcode },
+const utilityLinks: ServiceLink[] = [
   {
-    name: "พิมพ์บัตรลงทะเบียน",
-    url: "/print-register-card",
-    icon: IconPrinter,
+    name: "ขอ QR Code เช็คชื่อ",
+    url: portalConfig.endpoints.qrGuidance,
+    icon: IconQrcode,
   },
 ]
+
+const institutionLabel =
+  portalConfig.institutionName || "ระบบบริการสถานศึกษาออนไลน์"
 ---
 
 <Layout>
-  <div class="relative flex min-h-screen flex-col bg-gray-50">
-    <!-- Hero Banner -->
-    <div
-      class="relative overflow-hidden bg-linear-to-br from-red-700 via-red-900 to-red-800 pt-16 pb-32 md:pt-24"
+  <main class="min-h-screen bg-background text-foreground">
+    <section
+      class="relative overflow-hidden bg-primary py-8 text-primary-foreground md:py-0"
     >
       <FlickeringGrid
         client:load
-        className="absolute inset-0 z-0 [mask-image:linear-gradient(to_bottom,white_60%,transparent)]"
-        squareSize={24}
-        gridGap={6}
-        color="#AA0000"
-        maxOpacity={0.4}
-        flickerChance={0.2}
+        className="absolute inset-0 z-0 [mask-image:linear-gradient(to_bottom,white_72%,rgba(255,255,255,0.55)_84%,transparent)]"
+        squareSize={5}
+        gridGap={8}
+        color="#FF1111"
+        maxOpacity={0.24}
+        flickerChance={0.28}
       />
       <div
-        class="pointer-events-none absolute inset-0 z-0 mx-auto w-full max-w-6xl"
+        class="absolute inset-x-0 bottom-0 z-0 h-48 bg-linear-to-t from-background via-background/55 to-transparent"
       >
-        <img
-          src="/vec-avatar.png"
-          alt="นักเรียนวิทยาลัยเทคนิคสุรินทร์"
-          class="absolute right-4 bottom-16 h-48 w-auto object-contain drop-shadow-2xl md:right-8 md:bottom-24 md:h-64"
-        />
       </div>
       <div
-        class="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-4 px-4 text-white md:px-8 animate-fade-in-up"
+        class="absolute inset-x-0 bottom-0 z-0 h-28 bg-linear-to-t from-background/80 to-transparent blur-md"
       >
-        <h1>
-          <span class="text-base">สวัสดี, ยินดีต้อนรับสู่</span><br />
-          <span
-            style="font-size: clamp(3.25rem, 7vw, 4.5rem);"
-            class="font-medium text-red-100">MyCollege</span
-          >
-        </h1>
-        <p class="max-w-[350px] opacity-75 md:max-w-sm">
-          ระบบบริการสถานศึกษาออนไลน์ ที่รวบรวมทุกบริการสำหรับนักเรียน ครู
-          และบุคลากร ไว้ในที่เดียว
-        </p>
       </div>
-    </div>
 
-    <!-- Overlapping Content Area -->
-    <div class="mx-auto w-full max-w-6xl px-4 md:px-8">
-      <!-- Primary Overlapping Card -->
       <div
-        class="relative z-10 -mt-16 flex flex-col gap-8 rounded-2xl border border-gray-100 bg-white p-8 shadow-md md:-mt-24 md:flex-row md:p-8 animate-fade-in-up delay-150"
+        class="relative z-10 mx-auto grid w-full max-w-6xl gap-8 px-4 pt-16 pb-32 md:grid-cols-[minmax(0,1fr)_320px] md:px-8 md:pt-16 md:pb-32"
       >
-        <!-- Admission Highlight (Left Side) -->
+        <div class="relative z-10">
+          <p class="text-base font-semibold text-primary-foreground/80">
+            ยินดีต้อนรับสู่
+          </p>
+          <h1
+            class="mt-1 text-6xl leading-none font-semibold tracking-normal md:text-7xl"
+          >
+            {portalConfig.productName}
+          </h1>
+          <p
+            class="mt-4 hidden max-w-xl text-lg leading-8 text-primary-foreground/80 md:block"
+          >
+            {portalConfig.description}
+          </p>
+        </div>
+
         <div
-          class="flex flex-1 flex-col justify-center gap-4 rounded-2xl border border-red-100 bg-red-50 p-8"
+          class="pointer-events-none absolute right-0 -bottom-16 z-0 md:relative md:right-auto md:bottom-auto"
         >
-          <div
-            class="flex h-16 w-16 items-center justify-center rounded-2xl bg-red-600 text-white shadow-sm"
-          >
-            <IconUserPlus size={32} stroke={1.5} />
-          </div>
-          <div class="flex flex-col gap-2">
-            <h2 class="text-2xl font-bold text-gray-800">สมัครเรียนออนไลน์</h2>
-            <p class="text-sm font-semibold text-gray-600">
-              เปิดรับสมัครนักศึกษาใหม่ ประจำปีการศึกษา 2569 ในระดับ ปวช. และ
-              ปวส. ทุกสาขาวิชา
-            </p>
-          </div>
-          <div class="mt-4 flex w-full flex-col gap-4 sm:flex-row">
-            <div class="relative flex-1 shrink-0">
-              <div
-                class="absolute -inset-1 animate-pulse rounded-2xl bg-red-500/50 blur-sm"
-              >
-              </div>
+          <img
+            src={portalConfig.mascot}
+            alt=""
+            class="h-64 w-auto object-contain drop-shadow-2xl md:absolute md:top-0 md:right-0 md:h-72"
+          />
+        </div>
+      </div>
+    </section>
+
+    <div
+      id="services"
+      class="relative z-20 mx-auto w-full max-w-6xl px-4 pb-16 md:px-8"
+    >
+      <section class="-mt-16 grid grid-cols-2 gap-4 lg:grid-cols-4">
+        {
+          featuredLinks.map((link) => {
+            const Icon = link.icon
+            return (
               <a
-                href="https://surintechdigital.net/admidonline/"
-                class="group relative flex h-full w-full items-center justify-center gap-2 rounded-2xl bg-red-600 px-6 py-4 text-sm font-bold text-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:bg-red-500 hover:shadow-lg active:scale-95"
+                href={link.url}
+                class="group flex flex-col gap-8 rounded-md border bg-card p-4 shadow-sm transition-all hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
               >
-                สมัครเรียนเลย!
-                <IconChevronRight
-                  size={16}
-                  stroke={2}
-                  className="transition-transform group-hover:translate-x-1"
-                />
+                <div class="flex items-center justify-between gap-4">
+                  <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                    <Icon size={28} stroke={1.7} />
+                  </div>
+                  <IconExternalLink
+                    size={18}
+                    className="text-muted-foreground/30 transition-colors group-hover:text-primary/70"
+                    stroke={1.8}
+                  />
+                </div>
+                <div>
+                  <h2 class="text-lg font-semibold text-card-foreground md:text-xl">
+                    {link.name}
+                  </h2>
+                </div>
               </a>
-            </div>
+            )
+          })
+        }
+      </section>
 
-            <a
-              href="https://surintechdigital.net/admidonline/"
-              class="group flex flex-1 shrink-0 items-center justify-center gap-2 rounded-2xl border-2 border-red-200 bg-white px-4 py-4 text-sm font-bold text-red-600 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-red-500 hover:bg-red-50 hover:shadow-md active:scale-95"
-            >
-              <span class="relative flex h-2 w-2 shrink-0">
-                <span
-                  class="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75"
-                ></span>
-                <span
-                  class="relative inline-flex h-2 w-2 rounded-full bg-red-500"
-                ></span>
-              </span>
-              <span class="text-center">ประกาศรายชื่อผู้มีสิทธิ์ฯ</span>
-            </a>
+      <section class="mt-16">
+        <div class="mb-4 flex items-end justify-between gap-4">
+          <div>
+            <p class="text-sm font-bold text-primary">บริการทั่วไป</p>
+            <h2 class="mt-1 text-2xl font-bold">เครื่องมือเพิ่มเติม</h2>
           </div>
         </div>
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {
+            utilityLinks.map((link) => {
+              const Icon = link.icon
+              return (
+                <a
+                  href={link.url}
+                  class="group flex items-center gap-4 rounded-lg border border-transparent bg-muted/40 p-4 transition-all hover:border-border hover:bg-card hover:shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                >
+                  <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-muted text-muted-foreground transition-colors group-hover:bg-primary/10 group-hover:text-primary">
+                    <Icon size={22} stroke={1.7} />
+                  </div>
+                  <h3 class="flex-1 text-sm font-semibold text-card-foreground">
+                    {link.name}
+                  </h3>
+                  <IconExternalLink
+                    size={16}
+                    className="text-muted-foreground/30 transition-colors group-hover:text-primary/70"
+                    stroke={1.8}
+                  />
+                </a>
+              )
+            })
+          }
+        </div>
+      </section>
 
-        <!-- Main Services (Right Side) -->
-        <div class="flex flex-1 flex-col gap-4 animate-fade-in-up delay-[450ms]">
-          <h2 class="border-l-4 border-red-500 px-2 text-xl font-bold text-gray-800">บริการหลัก</h2>
-          <div class="flex flex-col gap-4">
-            {
-              mainLinks.map((link) => {
-                const Icon = link.icon
-                return (
-                  <a
-                    href={link.url}
-                    class="group flex items-center justify-between rounded-2xl border border-gray-100 bg-white p-4 shadow-sm transition-all hover:border-red-200 hover:bg-red-50 hover:shadow-md"
-                  >
-                    <div class="flex items-center gap-4">
-                      <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-red-100 text-red-600 transition-colors group-hover:bg-red-600 group-hover:text-white">
-                        <Icon size={32} stroke={1.5} />
-                      </div>
-                      <span class="font-bold text-gray-800 transition-colors group-hover:text-red-600">
-                        {link.name}
-                      </span>
-                    </div>
-                    <IconChevronRight
-                      size={24}
-                      className="text-gray-400 transition-transform group-hover:translate-x-2 group-hover:text-red-600"
-                    />
-                  </a>
-                )
-              })
-            }
+      <section class="mt-16">
+        <div class="mb-4 flex items-end justify-between gap-4">
+          <div>
+            <p class="text-sm font-bold text-muted-foreground">สำหรับบุคลากร</p>
+            <h2 class="mt-1 text-2xl font-bold">ระบบงานภายใน</h2>
           </div>
         </div>
-      </div>
-
-      <!-- Secondary Grids (Staff & Utility) -->
-      <div class="mt-16 flex flex-col gap-16 pb-32">
-        <!-- Staff Services -->
-        <div class="flex flex-col gap-4 animate-fade-in-up delay-500">
-          <div class="flex items-center gap-2">
-            <div class="h-8 w-2 rounded-2xl bg-red-600"></div>
-            <h2 class="text-xl font-bold text-gray-800">ระบบบุคลากร</h2>
-          </div>
-          <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
-            {
-              staffLinks.map((link) => {
-                const Icon = link.icon
-                return (
-                  <a
-                    href={link.url}
-                    class="group flex flex-col items-center justify-center gap-4 rounded-2xl border border-gray-100 bg-white p-8 text-center shadow-sm transition-all hover:border-red-200 hover:bg-red-50 hover:shadow-md"
-                  >
-                    <div class="text-gray-400 transition-colors group-hover:text-red-600">
-                      <Icon size={32} stroke={1.5} />
-                    </div>
-                    <span class="text-sm font-bold text-gray-700 transition-colors group-hover:text-red-600">
-                      {link.name}
-                    </span>
-                  </a>
-                )
-              })
-            }
-          </div>
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {
+            staffLinks.map((link) => {
+              const Icon = link.icon
+              return (
+                <a
+                  href={link.url}
+                  class="group flex items-center gap-4 rounded-lg border border-transparent bg-muted/40 p-4 transition-all hover:border-border hover:bg-card hover:shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                >
+                  <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-muted text-muted-foreground transition-colors group-hover:bg-primary/10 group-hover:text-primary">
+                    <Icon size={22} stroke={1.7} />
+                  </div>
+                  <h3 class="flex-1 text-sm font-semibold text-card-foreground">
+                    {link.name}
+                  </h3>
+                  <IconExternalLink
+                    size={16}
+                    className="text-muted-foreground/30 transition-colors group-hover:text-primary/70"
+                    stroke={1.8}
+                  />
+                </a>
+              )
+            })
+          }
         </div>
-
-        <!-- Utility Services -->
-        <div class="flex flex-col gap-4 animate-fade-in-up delay-700">
-          <div class="flex items-center gap-2">
-            <div class="h-8 w-2 rounded-2xl bg-gray-400"></div>
-            <h2 class="text-xl font-bold text-gray-800">บริการทั่วไป</h2>
-          </div>
-          <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
-            {
-              utilityLinks.map((link) => {
-                const Icon = link.icon
-                return (
-                  <a
-                    href={link.url}
-                    class="group flex flex-col items-center justify-center gap-4 rounded-2xl border border-gray-100 bg-white p-8 text-center shadow-sm transition-all hover:border-gray-300 hover:bg-white hover:shadow-md"
-                  >
-                    <div class="text-gray-400 transition-colors group-hover:text-gray-800">
-                      <Icon size={32} stroke={1.5} />
-                    </div>
-                    <span class="text-sm font-bold text-gray-600 transition-colors group-hover:text-gray-800">
-                      {link.name}
-                    </span>
-                  </a>
-                )
-              })
-            }
-          </div>
-        </div>
-      </div>
+      </section>
     </div>
-  </div>
+  </main>
 </Layout>

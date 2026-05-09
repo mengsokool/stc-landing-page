@@ -122,6 +122,15 @@ export const FlickeringGrid: React.FC<FlickeringGridProps> = ({
         const newHeight = height || container.clientHeight
         setCanvasSize({ width: newWidth, height: newHeight })
         gridParams = setupCanvas(canvas, newWidth, newHeight)
+        drawGrid(
+          ctx,
+          canvas.width,
+          canvas.height,
+          gridParams.cols,
+          gridParams.rows,
+          gridParams.squares,
+          gridParams.dpr
+        )
       }
 
       updateCanvasSize()
@@ -177,20 +186,20 @@ export const FlickeringGrid: React.FC<FlickeringGridProps> = ({
     }
   }, [setupCanvas, updateSquares, drawGrid, width, height, isInView])
 
-  return (
-    <div
-      ref={containerRef}
-      className={cn(`h-full w-full ${className}`)}
-      {...props}
-    >
-      <canvas
-        ref={canvasRef}
-        className="pointer-events-none"
-        style={{
-          width: canvasSize.width,
-          height: canvasSize.height,
-        }}
-      />
-    </div>
+  return React.createElement(
+    "div",
+    {
+      ref: containerRef,
+      className: cn("h-full w-full", className),
+      ...props,
+    },
+    React.createElement("canvas", {
+      ref: canvasRef,
+      className: "pointer-events-none",
+      style: {
+        width: canvasSize.width,
+        height: canvasSize.height,
+      },
+    })
   )
 }

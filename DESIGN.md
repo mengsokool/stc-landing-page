@@ -1,5 +1,5 @@
 ---
-name: Surin Technical College Portal
+name: Thai Vocational Institution Portal
 description: Educational service portal quick menu
 colors:
   primary: "#ef4444"
@@ -40,13 +40,13 @@ components:
     padding: "{spacing.4}"
 ---
 
-# Design System: Surin Technical College Portal
+# Design System: Thai Vocational Institution Portal
 
 ## 1. Overview
 
 **Creative North Star: "The Vibrant Official Hub"**
 
-The design philosophy for the Surin Technical College portal is centered around being a vibrant yet highly credible touchpoint. It uses soft layering and a bright, energetic crimson to bring life to an official academic structure. The interface is highly structured and clearly navigable, completely rejecting the cluttered density and tiny text often associated with old government systems. It should never feel like an uninspired, generic AI template, but rather a purposeful, modern, and confident digital service center.
+The design philosophy for this vocational institution portal is centered around being a vibrant yet highly credible touchpoint. It uses soft layering and a configurable institutional accent to bring life to an official academic structure. The interface is highly structured and clearly navigable, completely rejecting the cluttered density and tiny text often associated with old government systems. It should never feel like an uninspired, generic AI template, but rather a purposeful, modern, and confident digital service center.
 
 **Key Characteristics:**
 - **Clear and Confident:** Interfaces emphasize readability and distinct touch targets.

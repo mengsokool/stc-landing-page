@@ -8,7 +8,7 @@ product
 Students, teachers, college staff, prospective students, and corporate partners. They access this system to quickly navigate to their respective services on both desktop and mobile devices.
 
 ## Product Purpose
-A centralized educational service portal (Quick Menu) for Surin Technical College. It exists to provide fast, convenient access to various systems. A critical objective is to prominently highlight the "Admission" (สมัครเรียน) section to attract and guide prospective students.
+A configurable centralized educational service portal (Quick Menu) for Thai vocational institutions. It exists to provide fast, convenient access to various systems. A critical objective is to prominently highlight the "Admission" (สมัครเรียน) section to attract and guide prospective students without hardcoding a specific institution name.
 
 ## Brand Personality
 Modern educational institution, colorful, and official. It blends the vibrant, forward-looking energy of a vocational college with the credibility and structured feel of a government institution.
