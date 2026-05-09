@@ -1,9 +1,9 @@
 export const portalConfig = {
   productName: "MyCollege",
-  institutionName: "",
-  institutionShortName: "",
-  logo: "/favicon.svg",
-  mascot: "/vec-avatar.png",
+  institutionName: "วิทยาลัยเทคนิคสุรินทร์",
+  institutionShortName: "วิทยาลัยเทคนิคสุรินทร์",
+  logo: "/landing_page_asset/favicon.ico",
+  mascot: "/landing_page_asset/vec-avatar.webp",
   academicYear: "2569",
   description:
     "ระบบบริการสถานศึกษาออนไลน์ รวมบริการสำหรับนักเรียน ครู บุคลากร และสถานประกอบการไว้ในที่เดียว",
@@ -19,7 +19,7 @@ export const portalConfig = {
     facility: "https://surintechdigital.net/use_building",
     qrGuidance: "https://www.surintechdigital.net/activity/genqrcode/index.php",
     admission: "https://surintechdigital.net/admidonline/",
-    stcLink: "https://lin.ee/68v25bIR", // Placeholder
+    stcLink: "https://lin.ee/68v25bIR",
   },
 }
 

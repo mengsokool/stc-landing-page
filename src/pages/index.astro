@@ -36,7 +36,7 @@ const mainLinks: ServiceLink[] = [
     icon: IconBriefcase,
   },
   {
-    name: "บริการสถานประกอบการ",
+    name: "สถานประกอบการ",
     url: portalConfig.endpoints.workplace,
     icon: IconBuildingFactory,
   },
@@ -83,7 +83,7 @@ const utilityLinks: ServiceLink[] = [
   {
     name: "ไลน์ STC Link",
     url: portalConfig.endpoints.stcLink,
-    image: "/stc-link-logo.png",
+    image: "/landing_page_asset/stc-link-logo.webp",
     highlight: true,
   },
 ]
@@ -96,7 +96,7 @@ const utilityLinks: ServiceLink[] = [
     >
       <div class="absolute inset-0 z-0">
         <img
-          src="/100year_building.png"
+          src="/landing_page_asset/100year_building.webp"
           alt="100 Year Building"
           class="h-full w-full object-cover object-center opacity-70 mix-blend-luminosity"
         />
@@ -120,7 +120,7 @@ const utilityLinks: ServiceLink[] = [
         <div class="relative z-10 animate-fade-in-up">
           <p class="text-base font-semibold text-white/90">ยินดีต้อนรับสู่</p>
           <h1
-            class="mt-1 text-5xl leading-none font-semibold tracking-normal text-white md:text-7xl"
+            class="mt-1 text-4xl leading-none font-semibold tracking-normal text-white md:text-7xl"
           >
             {portalConfig.productName}
           </h1>
@@ -133,7 +133,7 @@ const utilityLinks: ServiceLink[] = [
 
         <div
           class="pointer-events-none absolute right-0 -bottom-16 z-0 animate-fade-in-up md:-bottom-16"
-          style="animation-delay: 150ms;"
+          style="animation-delay: 700ms;"
         >
           <img
             src={portalConfig.mascot}
@@ -197,7 +197,7 @@ const utilityLinks: ServiceLink[] = [
             <h2 class="mt-1 text-2xl font-bold">เครื่องมือเพิ่มเติม</h2>
           </div>
         </div>
-        <div class="grid grid-cols-2 gap-4 lg:grid-cols-4">
+        <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {
             utilityLinks.map((link, index) => {
               const Icon = link.icon
@@ -251,7 +251,7 @@ const utilityLinks: ServiceLink[] = [
             <h2 class="mt-1 text-2xl font-bold">ระบบงานภายใน</h2>
           </div>
         </div>
-        <div class="grid grid-cols-2 gap-4 lg:grid-cols-4">
+        <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {
             staffLinks.map((link, index) => {
               const Icon = link.icon

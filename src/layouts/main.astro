@@ -7,9 +7,7 @@ import "@fontsource/ibm-plex-sans-thai/700.css"
 import "@/styles/global.css"
 import { portalConfig } from "@/portal.config"
 
-const pageTitle = portalConfig.institutionShortName
-  ? `${portalConfig.institutionShortName} | ${portalConfig.productName}`
-  : `${portalConfig.productName} | ระบบบริการสถานศึกษา`
+const pageTitle = "MyCollege | ระบบบริหารจัดการวิทยาลัย"
 ---
 
 <html lang="th">
@@ -17,7 +15,26 @@ const pageTitle = portalConfig.institutionShortName
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={portalConfig.description} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="keywords" content="วิทยาลัยเทคนิคสุรินทร์, เทคนิคสุรินทร์, Surin Technical College, MyCollege, สมัครเรียน, ระบบบริการสถานศึกษา, STC" />
+    <meta name="author" content="วิทยาลัยเทคนิคสุรินทร์" />
+    <meta name="theme-color" content="#1D4ED8" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph / Facebook / LINE -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://surintechdigital.net/" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={portalConfig.description} />
+    <meta property="og:image" content="https://surintechdigital.net/landing_page_asset/og-image.jpg" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://surintechdigital.net/" />
+    <meta property="twitter:title" content={pageTitle} />
+    <meta property="twitter:description" content={portalConfig.description} />
+    <meta property="twitter:image" content="https://surintechdigital.net/landing_page_asset/og-image.jpg" />
+
+    <link rel="icon" type="image/x-icon" href="/landing_page_asset/favicon.ico" />
     <title>{pageTitle}</title>
   </head>
   <body>
