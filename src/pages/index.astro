@@ -10,7 +10,6 @@ import {
   IconCalendarEvent,
   IconClockCheck,
   IconExternalLink,
-  IconPrinter,
   IconQrcode,
   IconSchool,
   IconShieldCheck,
@@ -20,7 +19,9 @@ import {
 interface ServiceLink {
   name: string
   url: string
-  icon: any
+  icon?: any
+  image?: string
+  highlight?: boolean
 }
 
 const mainLinks: ServiceLink[] = [
@@ -79,25 +80,36 @@ const utilityLinks: ServiceLink[] = [
     url: portalConfig.endpoints.qrGuidance,
     icon: IconQrcode,
   },
+  {
+    name: "ไลน์ STC Link",
+    url: portalConfig.endpoints.stcLink,
+    image: "/stc-link-logo.png",
+    highlight: true,
+  },
 ]
-
-const institutionLabel =
-  portalConfig.institutionName || "ระบบบริการสถานศึกษาออนไลน์"
 ---
 
 <Layout>
   <main class="min-h-screen bg-background text-foreground">
     <section
-      class="relative overflow-hidden bg-primary py-8 text-primary-foreground md:py-0"
+      class="relative overflow-hidden bg-primary py-8 text-primary-foreground md:py-16"
     >
+      <div class="absolute inset-0 z-0">
+        <img
+          src="/100year_building.jpg"
+          alt="100 Year Building"
+          class="h-full w-full object-cover object-center opacity-40 mix-blend-overlay"
+        />
+        <div class="absolute inset-0 bg-primary/60 mix-blend-multiply"></div>
+      </div>
       <FlickeringGrid
         client:load
         className="absolute inset-0 z-0 [mask-image:linear-gradient(to_bottom,white_72%,rgba(255,255,255,0.55)_84%,transparent)]"
-        squareSize={5}
-        gridGap={8}
-        color="#FF1111"
-        maxOpacity={0.24}
-        flickerChance={0.28}
+        squareSize={6}
+        gridGap={2}
+        color="#3B82F6"
+        maxOpacity={0.1}
+        flickerChance={0.2}
       />
       <div
         class="absolute inset-x-0 bottom-0 z-0 h-48 bg-linear-to-t from-background via-background/55 to-transparent"
@@ -111,29 +123,30 @@ const institutionLabel =
       <div
         class="relative z-10 mx-auto grid w-full max-w-6xl gap-8 px-4 pt-16 pb-32 md:grid-cols-[minmax(0,1fr)_320px] md:px-8 md:pt-16 md:pb-32"
       >
-        <div class="relative z-10">
+        <div class="relative z-10 animate-fade-in-up">
           <p class="text-base font-semibold text-primary-foreground/80">
             ยินดีต้อนรับสู่
           </p>
           <h1
-            class="mt-1 text-6xl leading-none font-semibold tracking-normal md:text-7xl"
+            class="mt-1 text-6xl leading-none font-semibold tracking-normal text-white md:text-7xl"
           >
             {portalConfig.productName}
           </h1>
           <p
-            class="mt-4 hidden max-w-xl text-lg leading-8 text-primary-foreground/80 md:block"
+            class="mt-4 hidden max-w-xl text-lg leading-8 text-primary-foreground text-white md:block"
           >
             {portalConfig.description}
           </p>
         </div>
 
         <div
-          class="pointer-events-none absolute right-0 -bottom-16 z-0 md:relative md:right-auto md:bottom-auto"
+          class="pointer-events-none absolute right-0 -bottom-16 z-0 animate-fade-in-up md:-bottom-16"
+          style="animation-delay: 150ms;"
         >
           <img
             src={portalConfig.mascot}
             alt=""
-            class="h-64 w-auto object-contain drop-shadow-2xl md:absolute md:top-0 md:right-0 md:h-72"
+            class="h-64 w-auto object-contain drop-shadow-2xl md:h-[26rem]"
           />
         </div>
       </div>
@@ -145,16 +158,25 @@ const institutionLabel =
     >
       <section class="-mt-16 grid grid-cols-2 gap-4 lg:grid-cols-4">
         {
-          featuredLinks.map((link) => {
+          featuredLinks.map((link, index) => {
             const Icon = link.icon
             return (
               <a
                 href={link.url}
-                class="group flex flex-col gap-8 rounded-md border bg-card p-4 shadow-sm transition-all hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                class="group flex animate-fade-in-up flex-col gap-8 rounded-md border bg-card p-4 shadow-sm transition-all hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                style={`animation-delay: ${250 + index * 100}ms;`}
               >
                 <div class="flex items-center justify-between gap-4">
-                  <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                    <Icon size={28} stroke={1.7} />
+                  <div class="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                    {link.image ? (
+                      <img
+                        src={link.image}
+                        alt={link.name}
+                        class="h-full w-full object-cover"
+                      />
+                    ) : Icon ? (
+                      <Icon size={28} stroke={1.7} />
+                    ) : null}
                   </div>
                   <IconExternalLink
                     size={18}
@@ -174,30 +196,50 @@ const institutionLabel =
       </section>
 
       <section class="mt-16">
-        <div class="mb-4 flex items-end justify-between gap-4">
+        <div
+          class="mb-4 flex animate-fade-in-up items-end justify-between gap-4"
+          style="animation-delay: 450ms;"
+        >
           <div>
             <p class="text-sm font-bold text-primary">บริการทั่วไป</p>
             <h2 class="mt-1 text-2xl font-bold">เครื่องมือเพิ่มเติม</h2>
           </div>
         </div>
-        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="grid grid-cols-2 gap-4 lg:grid-cols-4">
           {
-            utilityLinks.map((link) => {
+            utilityLinks.map((link, index) => {
               const Icon = link.icon
               return (
                 <a
                   href={link.url}
-                  class="group flex items-center gap-4 rounded-lg border border-transparent bg-muted/40 p-4 transition-all hover:border-border hover:bg-card hover:shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                  class={cn(
+                    "group relative flex animate-fade-in-up items-center gap-4 overflow-hidden rounded-lg p-4 transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring",
+                    link.highlight
+                      ? "border border-red-500/30 bg-red-500/5 shadow-[0_0_12px_-2px_rgba(239,68,68,0.25)] hover:border-red-500/60 hover:bg-red-500/10 hover:shadow-[0_0_12px_0px_rgba(239,68,68,0.4)]"
+                      : "border bg-muted/40 hover:border-border hover:bg-card hover:shadow-sm"
+                  )}
+                  style={`animation-delay: ${550 + index * 100}ms;`}
                 >
-                  <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-muted text-muted-foreground transition-colors group-hover:bg-primary/10 group-hover:text-primary">
-                    <Icon size={22} stroke={1.7} />
+                  {link.highlight && (
+                    <div class="pointer-events-none absolute -top-4 -right-4 z-0 h-16 w-16 animate-pulse rounded-full bg-red-500/30 blur-2xl transition-all duration-700 group-hover:bg-red-400/40 group-hover:blur-3xl" />
+                  )}
+                  <div class="relative z-10 flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-md bg-muted text-muted-foreground transition-colors group-hover:bg-primary/10 group-hover:text-primary">
+                    {link.image ? (
+                      <img
+                        src={link.image}
+                        alt={link.name}
+                        class="h-full w-full object-cover"
+                      />
+                    ) : Icon ? (
+                      <Icon size={22} stroke={1.7} />
+                    ) : null}
                   </div>
-                  <h3 class="flex-1 text-sm font-semibold text-card-foreground">
+                  <h3 class="relative z-10 flex-1 text-sm font-semibold text-card-foreground">
                     {link.name}
                   </h3>
                   <IconExternalLink
                     size={16}
-                    className="text-muted-foreground/30 transition-colors group-hover:text-primary/70"
+                    className="relative z-10 text-muted-foreground/30 transition-colors group-hover:text-primary/70"
                     stroke={1.8}
                   />
                 </a>
@@ -208,23 +250,35 @@ const institutionLabel =
       </section>
 
       <section class="mt-16">
-        <div class="mb-4 flex items-end justify-between gap-4">
+        <div
+          class="mb-4 flex animate-fade-in-up items-end justify-between gap-4"
+          style="animation-delay: 750ms;"
+        >
           <div>
             <p class="text-sm font-bold text-muted-foreground">สำหรับบุคลากร</p>
             <h2 class="mt-1 text-2xl font-bold">ระบบงานภายใน</h2>
           </div>
         </div>
-        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="grid grid-cols-2 gap-4 lg:grid-cols-4">
           {
-            staffLinks.map((link) => {
+            staffLinks.map((link, index) => {
               const Icon = link.icon
               return (
                 <a
                   href={link.url}
-                  class="group flex items-center gap-4 rounded-lg border border-transparent bg-muted/40 p-4 transition-all hover:border-border hover:bg-card hover:shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                  class="group flex animate-fade-in-up items-center gap-4 rounded-lg border bg-muted/40 p-4 transition-all hover:border-border hover:bg-card hover:shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                  style={`animation-delay: ${850 + index * 100}ms;`}
                 >
-                  <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-muted text-muted-foreground transition-colors group-hover:bg-primary/10 group-hover:text-primary">
-                    <Icon size={22} stroke={1.7} />
+                  <div class="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-md bg-muted text-muted-foreground transition-colors group-hover:bg-primary/10 group-hover:text-primary">
+                    {link.image ? (
+                      <img
+                        src={link.image}
+                        alt={link.name}
+                        class="h-full w-full object-cover"
+                      />
+                    ) : Icon ? (
+                      <Icon size={22} stroke={1.7} />
+                    ) : null}
                   </div>
                   <h3 class="flex-1 text-sm font-semibold text-card-foreground">
                     {link.name}

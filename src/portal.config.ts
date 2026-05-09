@@ -19,6 +19,7 @@ export const portalConfig = {
     facility: "https://surintechdigital.net/use_building",
     qrGuidance: "https://www.surintechdigital.net/activity/genqrcode/index.php",
     admission: "https://surintechdigital.net/admidonline/",
+    stcLink: "https://lin.ee/68v25bIR", // Placeholder
   },
 }
 
