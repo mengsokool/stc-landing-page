@@ -35,7 +35,7 @@ export function CookieConsent() {
   if (!show) return null
 
   return (
-    <div className="fixed right-0 bottom-0 left-0 z-50 animate-fade-in-up p-4 sm:p-6">
+    <div className="fixed right-0 bottom-0 left-0 z-[99999999999999] animate-fade-in-up p-4 sm:p-6">
       <div className="mx-auto max-w-5xl rounded-2xl border border-border/50 bg-background p-6 shadow-2xl backdrop-blur-xl sm:flex sm:items-center sm:justify-between">
         <div className="mb-4 sm:mb-0 sm:pr-8">
           <h3 className="text-lg font-bold text-foreground">
@@ -53,8 +53,9 @@ export function CookieConsent() {
             </a>
           </p>
         </div>
-        <div className="flex shrink-0 flex-col gap-3 sm:flex-row sm:items-center">
+        <div className="flex shrink-0 flex-col-reverse gap-3 sm:flex-row sm:items-center">
           <Button
+            size="lg"
             variant="outline"
             onClick={handleDecline}
             className="w-full sm:w-auto"
@@ -62,6 +63,7 @@ export function CookieConsent() {
             ปฏิเสธ
           </Button>
           <Button
+            size="lg"
             onClick={handleAcceptAll}
             className="w-full bg-primary text-primary-foreground hover:bg-primary/90 sm:w-auto"
           >
