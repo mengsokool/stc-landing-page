@@ -20,6 +20,7 @@ export const portalConfig = {
     qrGuidance: "https://www.surintechdigital.net/activity/genqrcode/index.php",
     admission: "https://surintechdigital.net/admidonline/",
     stcLink: "https://lin.ee/68v25bIR",
+    printCard: "https://www.surintechdigital.net/MyCollege/print_document/index.php",
   },
 }
 

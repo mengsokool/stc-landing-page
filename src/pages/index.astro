@@ -9,6 +9,7 @@ import {
   IconCalendarEvent,
   IconClockCheck,
   IconExternalLink,
+  IconPrinter,
   IconQrcode,
   IconSchool,
   IconShieldCheck,
@@ -74,6 +75,11 @@ const staffLinks: ServiceLink[] = [
 ]
 
 const utilityLinks: ServiceLink[] = [
+  {
+    name: "พิมพ์บัตรลงทะเบียนเรียน",
+    url: portalConfig.endpoints.printCard,
+    icon: IconPrinter,
+  },
   {
     name: "ขอ QR Code เช็คชื่อ",
     url: portalConfig.endpoints.qrGuidance,
