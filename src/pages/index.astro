@@ -22,6 +22,13 @@ interface ServiceLink {
   icon?: any
   image?: string
   highlight?: boolean
+  colorClasses?: {
+    iconBg: string
+    iconText: string
+    hoverIconBg: string
+    hoverIconText: string
+    cardBorderHover: string
+  }
 }
 
 const mainLinks: ServiceLink[] = [
@@ -29,16 +36,37 @@ const mainLinks: ServiceLink[] = [
     name: "บริการนักเรียน",
     url: portalConfig.endpoints.student,
     icon: IconSchool,
+    colorClasses: {
+      iconBg: "bg-blue-100 dark:bg-blue-900/40",
+      iconText: "text-blue-600 dark:text-blue-400",
+      hoverIconBg: "group-hover:bg-blue-600 dark:group-hover:bg-blue-500",
+      hoverIconText: "group-hover:text-white",
+      cardBorderHover: "hover:border-blue-300 dark:hover:border-blue-700/50",
+    },
   },
   {
     name: "บริการครู",
     url: portalConfig.endpoints.teacher,
     icon: IconBriefcase,
+    colorClasses: {
+      iconBg: "bg-purple-100 dark:bg-purple-900/40",
+      iconText: "text-purple-600 dark:text-purple-400",
+      hoverIconBg: "group-hover:bg-purple-600 dark:group-hover:bg-purple-500",
+      hoverIconText: "group-hover:text-white",
+      cardBorderHover: "hover:border-purple-300 dark:hover:border-purple-700/50",
+    },
   },
   {
     name: "สถานประกอบการ",
     url: portalConfig.endpoints.workplace,
     icon: IconBuildingFactory,
+    colorClasses: {
+      iconBg: "bg-amber-100 dark:bg-amber-900/40",
+      iconText: "text-amber-600 dark:text-amber-400",
+      hoverIconBg: "group-hover:bg-amber-500 dark:group-hover:bg-amber-400",
+      hoverIconText: "group-hover:text-white dark:group-hover:text-amber-950",
+      cardBorderHover: "hover:border-amber-300 dark:hover:border-amber-700/50",
+    },
   },
 ]
 
@@ -47,6 +75,13 @@ const featuredLinks: ServiceLink[] = [
     name: "สมัครเรียน",
     url: portalConfig.endpoints.admission,
     icon: IconUserPlus,
+    colorClasses: {
+      iconBg: "bg-emerald-100 dark:bg-emerald-900/40",
+      iconText: "text-emerald-600 dark:text-emerald-400",
+      hoverIconBg: "group-hover:bg-emerald-500 dark:group-hover:bg-emerald-400",
+      hoverIconText: "group-hover:text-white dark:group-hover:text-emerald-950",
+      cardBorderHover: "hover:border-emerald-300 dark:hover:border-emerald-700/50",
+    },
   },
   ...mainLinks,
 ]
@@ -56,21 +91,49 @@ const staffLinks: ServiceLink[] = [
     name: "งานปกครอง",
     url: portalConfig.endpoints.discipline,
     icon: IconShieldCheck,
+    colorClasses: {
+      iconBg: "bg-rose-100 dark:bg-rose-900/40",
+      iconText: "text-rose-600 dark:text-rose-400",
+      hoverIconBg: "group-hover:bg-rose-500 dark:group-hover:bg-rose-500",
+      hoverIconText: "group-hover:text-white",
+      cardBorderHover: "hover:border-rose-300 dark:hover:border-rose-700/50",
+    },
   },
   {
     name: "งานกิจกรรม",
     url: portalConfig.endpoints.activity,
     icon: IconCalendarEvent,
+    colorClasses: {
+      iconBg: "bg-teal-100 dark:bg-teal-900/40",
+      iconText: "text-teal-600 dark:text-teal-400",
+      hoverIconBg: "group-hover:bg-teal-500 dark:group-hover:bg-teal-500",
+      hoverIconText: "group-hover:text-white",
+      cardBorderHover: "hover:border-teal-300 dark:hover:border-teal-700/50",
+    },
   },
   {
     name: "ลงเวลาปฏิบัติงาน",
     url: portalConfig.endpoints.attendance,
     icon: IconClockCheck,
+    colorClasses: {
+      iconBg: "bg-cyan-100 dark:bg-cyan-900/40",
+      iconText: "text-cyan-600 dark:text-cyan-400",
+      hoverIconBg: "group-hover:bg-cyan-500 dark:group-hover:bg-cyan-500",
+      hoverIconText: "group-hover:text-white",
+      cardBorderHover: "hover:border-cyan-300 dark:hover:border-cyan-700/50",
+    },
   },
   {
     name: "ขออนุญาตใช้อาคาร",
     url: portalConfig.endpoints.facility,
     icon: IconBuilding,
+    colorClasses: {
+      iconBg: "bg-indigo-100 dark:bg-indigo-900/40",
+      iconText: "text-indigo-600 dark:text-indigo-400",
+      hoverIconBg: "group-hover:bg-indigo-500 dark:group-hover:bg-indigo-500",
+      hoverIconText: "group-hover:text-white",
+      cardBorderHover: "hover:border-indigo-300 dark:hover:border-indigo-700/50",
+    },
   },
 ]
 
@@ -79,11 +142,25 @@ const utilityLinks: ServiceLink[] = [
     name: "พิมพ์บัตรลงทะเบียนเรียน",
     url: portalConfig.endpoints.printCard,
     icon: IconPrinter,
+    colorClasses: {
+      iconBg: "bg-sky-100 dark:bg-sky-900/40",
+      iconText: "text-sky-600 dark:text-sky-400",
+      hoverIconBg: "group-hover:bg-sky-500 dark:group-hover:bg-sky-500",
+      hoverIconText: "group-hover:text-white",
+      cardBorderHover: "hover:border-sky-300 dark:hover:border-sky-700/50",
+    },
   },
   {
     name: "ขอ QR Code เช็คชื่อ",
     url: portalConfig.endpoints.qrGuidance,
     icon: IconQrcode,
+    colorClasses: {
+      iconBg: "bg-fuchsia-100 dark:bg-fuchsia-900/40",
+      iconText: "text-fuchsia-600 dark:text-fuchsia-400",
+      hoverIconBg: "group-hover:bg-fuchsia-500 dark:group-hover:bg-fuchsia-500",
+      hoverIconText: "group-hover:text-white",
+      cardBorderHover: "hover:border-fuchsia-300 dark:hover:border-fuchsia-700/50",
+    },
   },
   {
     name: "ไลน์ STC Link",
@@ -158,11 +235,22 @@ const utilityLinks: ServiceLink[] = [
             return (
               <a
                 href={link.url}
-                class="group flex animate-fade-in-up flex-col gap-8 rounded-md border bg-card p-4 shadow-sm transition-all hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                class={cn(
+                  "group flex animate-fade-in-up flex-col gap-8 rounded-md border bg-card p-4 shadow-sm transition-all hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring",
+                  link.colorClasses?.cardBorderHover
+                )}
                 style={`animation-delay: ${250 + index * 100}ms;`}
               >
                 <div class="flex justify-between gap-4">
-                  <div class="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-blue-100 text-primary transition-colors group-hover:bg-primary group-hover:text-white dark:bg-blue-900/50">
+                  <div
+                    class={cn(
+                      "flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl transition-colors",
+                      link.colorClasses?.iconBg || "bg-blue-100 dark:bg-blue-900/50",
+                      link.colorClasses?.iconText || "text-primary",
+                      link.colorClasses?.hoverIconBg || "group-hover:bg-primary",
+                      link.colorClasses?.hoverIconText || "group-hover:text-white"
+                    )}
+                  >
                     {link.image ? (
                       <img
                         src={link.image}
@@ -205,20 +293,32 @@ const utilityLinks: ServiceLink[] = [
             utilityLinks.map((link, index) => {
               const Icon = link.icon
               return (
-                <a
-                  href={link.url}
-                  class={cn(
-                    "group relative flex animate-fade-in-up items-center gap-4 overflow-hidden rounded-lg p-4 transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring",
-                    link.highlight
-                      ? "border border-red-200 bg-red-50 shadow-[0_0_12px_-2px_rgba(239,68,68,0.25)] hover:border-red-300 hover:bg-red-100 hover:shadow-[0_0_12px_0px_rgba(239,68,68,0.4)] dark:border-red-900 dark:bg-red-950"
-                      : "border bg-muted/40 hover:border-border hover:bg-card hover:shadow-sm"
-                  )}
-                  style={`animation-delay: ${550 + index * 100}ms;`}
-                >
-                  {link.highlight && (
-                    <div class="pointer-events-none absolute -top-4 -right-4 z-0 h-16 w-16 animate-pulse rounded-full bg-red-200 blur-2xl transition-all duration-700 group-hover:bg-red-300 group-hover:blur-3xl dark:bg-red-900" />
-                  )}
-                  <div class="relative z-10 flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-md bg-muted text-muted-foreground transition-colors group-hover:bg-blue-100 group-hover:text-primary dark:group-hover:bg-blue-900/50">
+                  <a
+                    href={link.url}
+                    class={cn(
+                      "group relative flex animate-fade-in-up items-center gap-4 overflow-hidden rounded-lg p-4 transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring",
+                      link.highlight
+                        ? "border border-red-200 bg-red-50 shadow-[0_0_12px_-2px_rgba(239,68,68,0.25)] hover:border-red-300 hover:bg-red-100 hover:shadow-[0_0_12px_0px_rgba(239,68,68,0.4)] dark:border-red-900 dark:bg-red-950"
+                        : cn("border bg-muted/40 hover:bg-card hover:shadow-sm", link.colorClasses?.cardBorderHover || "hover:border-border")
+                    )}
+                    style={`animation-delay: ${550 + index * 100}ms;`}
+                  >
+                    {link.highlight && (
+                      <div class="pointer-events-none absolute -top-4 -right-4 z-0 h-16 w-16 animate-pulse rounded-full bg-red-200 blur-2xl transition-all duration-700 group-hover:bg-red-300 group-hover:blur-3xl dark:bg-red-900" />
+                    )}
+                    <div
+                      class={cn(
+                        "relative z-10 flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-md transition-colors",
+                        link.highlight
+                          ? "bg-muted text-muted-foreground group-hover:bg-blue-100 group-hover:text-primary dark:group-hover:bg-blue-900/50"
+                          : cn(
+                              link.colorClasses?.iconBg || "bg-muted dark:bg-muted/50",
+                              link.colorClasses?.iconText || "text-muted-foreground",
+                              link.colorClasses?.hoverIconBg || "group-hover:bg-blue-100 dark:group-hover:bg-blue-900/50",
+                              link.colorClasses?.hoverIconText || "group-hover:text-primary"
+                            )
+                      )}
+                    >
                     {link.image ? (
                       <img
                         src={link.image}
@@ -261,10 +361,21 @@ const utilityLinks: ServiceLink[] = [
               return (
                 <a
                   href={link.url}
-                  class="group flex animate-fade-in-up items-center gap-4 rounded-lg border bg-muted/40 p-4 transition-all hover:border-border hover:bg-card hover:shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                  class={cn(
+                    "group flex animate-fade-in-up items-center gap-4 rounded-lg border bg-muted/40 p-4 transition-all hover:bg-card hover:shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring",
+                    link.colorClasses?.cardBorderHover || "hover:border-border"
+                  )}
                   style={`animation-delay: ${850 + index * 100}ms;`}
                 >
-                  <div class="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-md bg-muted text-muted-foreground transition-colors group-hover:bg-blue-100 group-hover:text-primary dark:group-hover:bg-blue-900/50">
+                  <div
+                    class={cn(
+                      "flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-md transition-colors",
+                      link.colorClasses?.iconBg || "bg-muted dark:bg-muted/50",
+                      link.colorClasses?.iconText || "text-muted-foreground",
+                      link.colorClasses?.hoverIconBg || "group-hover:bg-blue-100 dark:group-hover:bg-blue-900/50",
+                      link.colorClasses?.hoverIconText || "group-hover:text-primary"
+                    )}
+                  >
                     {link.image ? (
                       <img
                         src={link.image}
